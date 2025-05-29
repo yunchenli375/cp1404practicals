@@ -31,3 +31,9 @@ def celsius2fahrenheit(celsius):
     """Convert Celsius to Fahrenheit."""
     return celsius * 9.0 / 5 + 32
 
+
+def fahrenheit2celsius(fahrenheit):
+    """Convert Fahrenheit to Celsius."""
+    return 5 / 9 * (fahrenheit - 32)
+
+main()
