@@ -37,4 +37,15 @@ def validate_score(score_string):
         return False
 
 
+def get_valid_score():
+    """Prompt the user for a valid score and return it as an integer."""
+    score_string = input("Enter score: ")
+    valid = validate_score(score_string)
+    while not valid:
+        print("Invalid score")
+        score_string = input("Enter score: ")
+        valid = validate_score(score_string)
+    return int(score_string)
+
+
 
