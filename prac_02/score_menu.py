@@ -48,4 +48,9 @@ def get_valid_score():
     return int(score_string)
 
 
+def print_stars(score):
+    """Print a row of stars corresponding to the score."""
+    print("*" * score)
+
+
 
