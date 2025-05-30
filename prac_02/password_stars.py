@@ -9,4 +9,9 @@ def main():
     else:
         print("You are login Failure")
 
+def get_password():
+    password = getpass.getpass("Enter your password: ")
+    return password
 
+if __name__ == "__main__":
+    main()
