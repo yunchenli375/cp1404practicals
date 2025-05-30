@@ -14,3 +14,19 @@ def main():
     print(determine_grade(randomized_score))
 
 
+def determine_grade(score):
+    """Determine the grade based on the score."""
+    if score >= 50:
+        if score >= 90:
+            if score > 100:
+                return "Invalid score"
+            else:
+                return "Excellent"
+        else:
+            return "Passable"
+    elif score < 0:
+        return "Invalid score"
+    else:
+        return "Bad"
+
+
