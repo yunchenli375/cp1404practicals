@@ -25,3 +25,16 @@ def main():
     print("Farewell.")
 
 
+def validate_score(score_string):
+    """Validate the score string to ensure it is a digit and within the range 0-100."""
+    if score_string.isdigit():
+        score = int(score_string)
+        if determine_grade(score) != "Invalid score":
+            return True
+        else:
+            return False
+    else:
+        return False
+
+
+
