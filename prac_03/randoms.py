@@ -26,3 +26,8 @@ print(random.uniform(2.5, 5.5))  # line 3
 # 3.1552587326880097 and 5.244601983663225
 
 # Write code, not a comment, to produce a random number between 1 and 100 inclusive.
+
+import random
+
+random_number = random.randint(1, 100)
+print(f"{random_number} ")
