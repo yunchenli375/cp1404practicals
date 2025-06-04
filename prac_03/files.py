@@ -18,3 +18,9 @@ with open("numbers.txt") as in_file:
         sum += int(line)
     print(sum)
 
+# question 4
+with open("numbers.txt") as in_file:
+    sum = 0
+    for line in in_file:
+        sum += int(line)
+    print(sum)
