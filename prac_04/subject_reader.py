@@ -30,4 +30,16 @@ def load_data():
     input_file.close()
     return data
 
+
+def display_subject_details(data):
+    """Print a string describing each subject."""
+    for subject in data:
+        subject_name = subject[0]
+        lecturer = subject[1]
+        num_students = subject[2]
+        print(
+            f"{subject_name} is taught by {lecturer:<12} and has {num_students:>3} students."
+        )
+
+
 main()
