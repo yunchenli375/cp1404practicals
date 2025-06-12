@@ -14,10 +14,19 @@ def main():
         incomes.append(income)
 
     print("\nIncome Report\n-------------")
+    display_income_report(incomes)
+
+
+def display_income_report(incomes):
+    """Display a report of monthly incomes and cumulative total."""
     total = 0
-    for month in range(1, num_months + 1):
-        income = incomes[month - 1]
-        total += income
-        print("Month {:2} - Income: ${:10.2f} Total: ${:10.2f}".format(month, income, total))
+    month = 1
+    for monthly_income in incomes:
+        total += monthly_income
+        print(
+            f"Month {month:2} - Income: ${monthly_income:10.2f} Total: ${total:10.2f}"
+        )
+        month += 1
+
 
 main()
