@@ -33,3 +33,6 @@ numbers[0] = "ten"
 # Change the last element of numbers to 1
 numbers[-1] = 1
 
+# Print all the elements from numbers except the first two (slice)
+print(numbers[2:])
+
