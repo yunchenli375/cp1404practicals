@@ -12,3 +12,16 @@ def main():
     while email != "":
         name = extract_name(email)
         response = input(f"Is your name {name}? (Y/n) ")
+        if response.lower() == "y" or response == "":
+            emails_to_names[email] = name
+        else:
+            name = input("Name: ")
+            emails_to_names[email] = name
+        email = input("Email: ")
+    print()
+
+    for email, name in emails_to_names.items():
+        print(f"{name} ({email})")
+
+
+
