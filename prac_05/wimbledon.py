@@ -20,4 +20,12 @@ def main():
             names_to_championships[items[2]] = (
                 names_to_championships.get(items[2], 0) + 1
             )
+    print("Wimbledon Champions:")
+    for name, championships in sorted(names_to_championships.items()):
+        print(f"{name} {championships}")
+    print()
+    print(f"These {len(countries_with_champions)} countries have won Wimbledon")
+    print(", ".join(sorted(countries_with_champions)))
 
+
+main()
