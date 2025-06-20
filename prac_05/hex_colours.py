@@ -14,3 +14,18 @@ HEX_COLOURS = {
     "cyan1": "#00FFFF",
     "magenta1": "#FF00FF",
 }
+
+
+def main():
+    """program entrypoint"""
+    color_name = input("Enter a colour name: ")
+    while color_name != "":
+        color_name = color_name.lower()
+        if color_name in HEX_COLOURS:
+            print(f"{HEX_COLOURS[color_name].lower()}")
+        else:
+            print("Color not found")
+        color_name = input("Enter a colour name: ")
+
+
+main()
