@@ -24,4 +24,9 @@ def main():
         print(f"{name} ({email})")
 
 
+def extract_name(email):
+    """return the name from an email address"""
+    return " ".join(email[: email.find("@")].split(".")).title()
 
+
+main()
