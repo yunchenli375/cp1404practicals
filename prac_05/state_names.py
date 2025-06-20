@@ -15,3 +15,10 @@ CODE_TO_NAME = {
     "TAS": "Tasmania",
     "SA": "South Australia",
 }
+print(CODE_TO_NAME)
+
+# 4. Write a loop that prints all the states and names neatly lined up with string formatting
+for code, name in CODE_TO_NAME.items():
+    print(f"{code:3} is {name:20}")
+
+
