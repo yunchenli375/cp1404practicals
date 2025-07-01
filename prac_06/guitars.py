@@ -27,4 +27,14 @@ def print_guitars_as_table(guitars: list[Guitar]):
         )
 
 
+def collect_guitars_from_user_input():
+    """returns a list of Guitar instances from interactive prompt input"""
+    guitars = []
+    new_guitar = create_guitar_from_user_input()
+    while new_guitar is not None:
+        guitars.append(new_guitar)
+        print(f"{new_guitar} added.")
+        new_guitar = create_guitar_from_user_input()
+    return guitars
+
 
