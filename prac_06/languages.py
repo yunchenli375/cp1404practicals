@@ -10,3 +10,12 @@ YEAR_RUBY_INVENTED = 1995
 YEAR_VISUAL_BASIC_INVENTED = 1991
 
 
+def main():
+    """program entrypoint"""
+    python = ProgrammingLanguage("Python", "Dynamic", True, YEAR_PYTHON_INVENTED)
+    ruby = ProgrammingLanguage("Ruby", "Dynamic", True, YEAR_RUBY_INVENTED)
+    visual_basic = ProgrammingLanguage(
+        "Visual Basic", "Static", False, YEAR_VISUAL_BASIC_INVENTED
+    )
+    print(python)
+
