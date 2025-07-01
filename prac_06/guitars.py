@@ -38,3 +38,15 @@ def collect_guitars_from_user_input():
     return guitars
 
 
+def create_guitar_from_user_input():
+    """returns a Guitar instance from interactive prompt input"""
+    name = input("Name: ")
+    if name == "":
+        return None
+    year = int(input("Year: "))
+    cost = float(input("Cost: $"))
+    guitar = Guitar(name, year, cost)
+    return guitar
+
+
+main()
