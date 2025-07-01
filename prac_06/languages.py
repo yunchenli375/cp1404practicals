@@ -18,4 +18,11 @@ def main():
         "Visual Basic", "Static", False, YEAR_VISUAL_BASIC_INVENTED
     )
     print(python)
+    print("The dynamically typed languages are:")
+    programming_languages = [python, ruby, visual_basic]
+    for language in programming_languages:
+        if language.is_dynamic():
+            print(language.name)
 
+
+main()
