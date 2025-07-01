@@ -25,3 +25,6 @@ class ProgrammingLanguage:
         """returns whether the language is dynamically typed"""
         return self.dynamic
 
+    def __str__(self):
+        """return a readable string representation of the instance"""
+        return f"{self.name}, {'Dynamic' if self.dynamic else 'Static'} Typing, Reflection={self.reflection}, Year={self.year}"
