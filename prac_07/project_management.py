@@ -47,3 +47,30 @@ def main():
     prompt_to_save(manager, path)
     print("Thank you for using custom-built project management software.")
 
+
+def menu(prompt, expected_choice):
+    """display a menu and get a valid user choice in expected choice"""
+    print(prompt)
+    choice = input(">>> ")
+    while len(choice) == 0 or choice[0].upper() not in expected_choice:
+        choice = input("Invalid choice, please try again. >>> ")
+    return choice[0].upper()
+
+
+def initialize_project_manager(filename):
+    """create a ProjectManager instance from a file"""
+    in_file = open(filename)
+    project_manager = ProjectManager(in_file)
+    in_file.close()
+    print(f"Loaded {len(project_manager)} projects from {filename}")
+    return project_manager
+
+
+def prompt_to_save(manager, path):
+    """Prompt the user to save the project manager's data."""
+    if input(f"Would you like to save to {path}? ").lower()[0] == "y":
+        manager.dump(open(path, "w"))
+        print(f"Projects saved to {path}")
+
+
+main()
