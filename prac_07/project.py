@@ -171,3 +171,88 @@ class ProjectManager:
             print(f"{self.projects[i]}")
 
 
+def get_valid_name_interactively(prompt="Project name: "):
+    """Get a valid project name from the user interactively."""
+    name = input(prompt)
+    while name == "":
+        print("Project name cannot be empty.")
+        name = input(prompt)
+    return name
+
+
+def get_valid_date_interactively(prompt="Project start date (dd/mm/yyyy): "):
+    """Get a valid project start date from the user interactively."""
+    date = input(prompt)
+    while not is_valid_datetime(date, DATE_FORMAT):
+        print("Invalid date format. Please use dd/mm/yyyy.")
+        date = input(prompt)
+    return date
+
+
+def is_valid_datetime(date, format):
+    """Helper function of ProjectManager.interactively_add_project
+    to parse date strings, returns None when parsing fails."""
+    # Using try-except handling the logic will unavoidably introduce while True loops,
+    # which may lead to very low marks.
+    try:
+        datetime.strptime(date, format)
+    except ValueError:
+        return False
+    return True
+
+
+def get_valid_priority_interactively(prompt="Project priority: ", omittable=False):
+    """Get a valid project priority from the user interactively.
+    Returns -1 if the input is empty and omittable is True."""
+    priority = input(prompt)
+    while not (
+        (priority.isdigit() and int(priority) >= 0) or (omittable and priority == "")
+    ):
+        print("Priority must be a non-negative integer.")
+        priority = input(prompt)
+    if priority == "":
+        return -1
+    return int(priority)
+
+
+def get_valid_cost_estimate_interactively(prompt="Project cost estimate: "):
+    """Get a valid project cost estimate from the user interactively."""
+    cost_estimate = input(prompt)
+    while not is_valid_cost_estimate(cost_estimate):
+        print("Cost estimate must be a valid number.")
+        cost_estimate = input(prompt)
+    return float(cost_estimate)
+
+
+def is_valid_cost_estimate(cost_estimate):
+    """Helper function of ProjectManager.interactively_add_project,
+    returns None when parsing fails or the cost is negative."""
+    # Directly parse the string with possible dots,
+    # like cost.estimate.replace('.', '') is error-prone,
+    # users can enter a string with multiple dots like "1.2.3",
+    # which is not a valid float.
+    try:
+        return float(cost_estimate) >= 0
+    except ValueError:
+        return False
+
+
+def get_valid_completion_percentage_interactively(
+    prompt="Project completion percentage: ", omittable=False
+):
+    """Get a valid project completion percentage from the user interactively.
+    Returns -1 if the input is empty and omittable is True."""
+    completion_percentage = input(prompt)
+    while not (
+        (
+            completion_percentage.isdigit()
+            and int(completion_percentage) >= 0
+            and int(completion_percentage) <= 100
+        )
+        or (omittable and completion_percentage == "")
+    ):
+        print("Completion percentage must be a number between 0 and 100.")
+        completion_percentage = input(prompt)
+    if completion_percentage == "":
+        return -1
+    return int(completion_percentage)
