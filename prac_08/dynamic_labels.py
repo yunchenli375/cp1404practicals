@@ -10,3 +10,9 @@ from kivy.uix.label import Label
 
 class DynamicLabelsApp(App):
     """Kivy App to demonstrate dynamic labels."""
+
+    def __init__(self, **kwargs):
+        """Initialize the app."""
+        super().__init__(**kwargs)
+        self.title = "Dynamic Labels Example"
+        self.names = ["Alice", "Bob", "Charlie", "Diana", "Ethan"]
