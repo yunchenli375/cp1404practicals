@@ -29,3 +29,6 @@ class SquareNumberApp(App):
             self.root.ids.output_label.text = str(result)
         except ValueError:
             pass
+
+
+SquareNumberApp().run()
