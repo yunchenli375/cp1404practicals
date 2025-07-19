@@ -35,3 +35,12 @@ class MilesToKmConverterApp(App):
         except ValueError:
             self.output_text = "0.0"
 
+    def handle_increment(self, increment):
+        """Handle increment of miles input"""
+        try:
+            self.root.ids.input_miles.text = str(
+                float(self.root.ids.input_miles.text) + increment
+            )
+        except ValueError:
+            self.root.ids.input_miles.text = "0.0"
+            self.handle_increment(increment)
