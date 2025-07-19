@@ -16,3 +16,11 @@ class DynamicLabelsApp(App):
         super().__init__(**kwargs)
         self.title = "Dynamic Labels Example"
         self.names = ["Alice", "Bob", "Charlie", "Diana", "Ethan"]
+
+    def build(self):
+        """Build the GUI from the kv file."""
+        self.title = "Dynamic Labels"
+        self.root = Builder.load_file("dynamic_labels.kv")
+        for name in self.names:
+            self.root.ids.main.add_widget(Label(text=name))
+        return self.root
