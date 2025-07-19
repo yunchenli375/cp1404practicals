@@ -44,3 +44,6 @@ class MilesToKmConverterApp(App):
         except ValueError:
             self.root.ids.input_miles.text = "0.0"
             self.handle_increment(increment)
+
+
+MilesToKmConverterApp().run()
