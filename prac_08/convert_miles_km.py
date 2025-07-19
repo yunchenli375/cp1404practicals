@@ -15,3 +15,10 @@ class MilesToKmConverterApp(App):
 
     output_text = StringProperty()
 
+    def build(self):
+        """Build the GUI from the kv file."""
+        self.title = "Miles to Kilometers Converter"
+        self.root = Builder.load_file("convert_miles_km.kv")
+        self.output_text = "0.0"
+        return self.root
+
