@@ -26,3 +26,12 @@ class MilesToKmConverterApp(App):
         """Handle text input change."""
         self.handle_conversion()
 
+    def handle_conversion(self):
+        """Convert miles to kilometers and update the output text."""
+        try:
+            miles = float(self.root.ids.input_miles.text)
+            kilometers = miles * KM_PER_MILE
+            self.output_text = str(kilometers)
+        except ValueError:
+            self.output_text = "0.0"
+
