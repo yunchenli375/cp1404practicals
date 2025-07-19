@@ -22,3 +22,7 @@ class MilesToKmConverterApp(App):
         self.output_text = "0.0"
         return self.root
 
+    def handle_text_input(self):
+        """Handle text input change."""
+        self.handle_conversion()
+
