@@ -70,4 +70,11 @@ class TaxiSimulator:
         for i, taxi in enumerate(self.taxis):
             print(f"{i} - {taxi}")
 
+    def quit(self):
+        """print the total fare and taxis"""
+        print(f"Total trip cost: ${self.fare:.2f}")
+        print("Taxis are now:")
+        self.display_taxis()
+
+
 
