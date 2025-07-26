@@ -29,3 +29,8 @@ class Band:
         """Add a musician to the band."""
         self.musicians.append(musician)
 
+    def play(self):
+        """Return a string showing all musicians playing their first instrument."""
+        if not self.musicians:
+            return f"{self.name} has no musicians!"
+        return "\n".join(musician.play() for musician in self.musicians)
