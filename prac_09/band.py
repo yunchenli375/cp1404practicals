@@ -14,3 +14,7 @@ from musician import Musician
 class Band:
     """Band class consists of musicians."""
 
+    def __init__(self, name):
+        """create a band with no musicians."""
+        self.name = name
+        self.musicians: list[Musician] = []
