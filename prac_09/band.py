@@ -18,3 +18,9 @@ class Band:
         """create a band with no musicians."""
         self.name = name
         self.musicians: list[Musician] = []
+
+    def __str__(self):
+        """Return a string representation of a Band."""
+        return (
+            f"{self.name} ({', '.join(str(musician) for musician in self.musicians)})"
+        )
