@@ -77,4 +77,25 @@ class TaxiSimulator:
         self.display_taxis()
 
 
+def main():
+    """program entrypoint"""
+    from taxi import Taxi
+    from silver_service_taxi import SilverServiceTaxi
 
+    print("Let's drive!")
+    simulator = TaxiSimulator(
+        [
+            Taxi("Prius", 100),
+            SilverServiceTaxi("Limo", 100, 2),
+            SilverServiceTaxi("Hummer", 200, 4),
+        ]
+    )
+    while (choice := simulator.menu()) != "Q":
+        if choice == "C":
+            simulator.choose_taxi()
+        elif choice == "D":
+            simulator.drive()
+    simulator.quit()
+
+
+main()
