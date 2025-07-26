@@ -51,3 +51,17 @@ class TaxiSimulator:
             self.fare += trip_fare
         print(f"Bill to date: ${self.fare:.2f}")
 
+    def choose_taxi(self):
+        """choose a taxi from the list of taxis"""
+        if not self.taxis:
+            print("You have no taxis to choose")
+            return
+        print("Taxis available:")
+        self.display_taxis()
+        choice = input("Choose taxi: ")
+        if not choice.isdigit() or int(choice) < 0 or int(choice) >= len(self.taxis):
+            print("Invalid taxi choice")
+        else:
+            self.current_idx = int(choice)
+        print(f"Bill to date: ${self.fare:.2f}")
+
