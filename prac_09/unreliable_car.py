@@ -8,3 +8,5 @@ import random
 from car import Car
 
 
+class UnreliableCar(Car):
+    """Specialised version of a Car that is unreliable."""
