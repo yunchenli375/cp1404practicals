@@ -11,3 +11,6 @@ Then the musician's instruments should be a list of Instrument objects.
 from musician import Musician
 
 
+class Band:
+    """Band class consists of musicians."""
+
