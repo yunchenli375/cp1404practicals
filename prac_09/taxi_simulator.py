@@ -19,3 +19,14 @@ class TaxiSimulator:
         self.current_idx = -1
         self.fare = 0.0
 
+    def menu(self):
+        """returns a valid menu choice"""
+        print(self.MENU)
+        choice = input(">>> ")
+        while choice == "" or choice.upper()[0] not in self.CHOICE:
+            print("Invalid option")
+            print(f"Bill to date: ${self.fare:.2f}")
+            print(self.MENU)
+            choice = input(">>> ")
+        return choice.upper()[0]
+
