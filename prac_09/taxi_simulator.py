@@ -65,3 +65,9 @@ class TaxiSimulator:
             self.current_idx = int(choice)
         print(f"Bill to date: ${self.fare:.2f}")
 
+    def display_taxis(self):
+        """Display the list of taxis"""
+        for i, taxi in enumerate(self.taxis):
+            print(f"{i} - {taxi}")
+
+
