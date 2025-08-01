@@ -103,3 +103,14 @@ doctest.testmod()
 # and one more that you decide is a useful test.
 # Run your doctests and watch the tests fail.
 # Then write the body of the function so that the tests pass.
+def format_phrase(phrase: str):
+    """Format a phrase as a sentence, starting with a capital and ending with a single full stop.
+    >>> format_phrase('hello')
+    'Hello.'
+    >>> format_phrase('It is an ex parrot.')
+    'It is an ex parrot.'
+    >>> format_phrase(' >*{]hEl10 W0rld}[. .? @')
+    'Hel10 w0rld.'
+    """
+    # raw string is used to avoid escaping special characters
+    return f"{phrase.strip(r' ~`!@#$%^&*()-_+={}[]\|<>,./?').capitalize()}."
