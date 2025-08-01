@@ -40,3 +40,7 @@ class Car:
         return distance
 
 
+def repeat_string(s, n):
+    """Repeat string s, n times, with spaces in between."""
+    return " ".join(s for _ in range(n))
+
